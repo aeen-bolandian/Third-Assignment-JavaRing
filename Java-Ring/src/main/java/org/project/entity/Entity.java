@@ -15,6 +15,7 @@ public interface Entity {
 
     int getMaxMP();
 
+    boolean isDead();
     /*
     TODO: ADD OTHER REQUIRED AND BONUS METHODS
     */

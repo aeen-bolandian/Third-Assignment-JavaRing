@@ -10,14 +10,16 @@ public abstract class Player implements Entity {
     Weapon weapon;
     Armor armor;
     private int hp;
-    private int maxHP;
+    private final int maxHP;
     private int mp;
-    private int maxMP;
+    private final int maxMP;
 
     public Player(String name, int hp, int mp, Weapon weapon, Armor armor) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
+        this.maxHP = hp;
+        this.maxMP = mp;
 
         this.weapon = weapon;
         this.armor = armor;
@@ -86,4 +88,8 @@ public abstract class Player implements Entity {
         return armor;
     }
 
+    @Override
+    public boolean isDead(){
+        return hp <= 0;
+    }
 }
