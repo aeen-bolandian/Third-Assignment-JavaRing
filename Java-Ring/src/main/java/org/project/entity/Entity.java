@@ -16,6 +16,14 @@ public interface Entity {
     int getMaxMP();
 
     boolean isDead();
+
+    int getMp();
+
+    int getHp();
+
+    void setMp(int mp);
+
+    void setHp(int hp);
     /*
     TODO: ADD OTHER REQUIRED AND BONUS METHODS
     */

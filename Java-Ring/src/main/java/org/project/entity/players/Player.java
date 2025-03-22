@@ -62,18 +62,22 @@ public abstract class Player implements Entity {
         return name;
     }
 
+    @Override
     public int getHp() {
         return hp;
     }
+    public void setHp(int hp) {this.hp = hp;}
 
     @Override
     public int getMaxHP() {
         return maxHP;
     }
 
+    @Override
     public int getMp() {
         return mp;
     }
+    public void setMp(int mp) {this.mp = mp;}
 
     @Override
     public int getMaxMP() {
