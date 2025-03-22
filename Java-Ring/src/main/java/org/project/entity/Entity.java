@@ -1,6 +1,8 @@
 package org.project.entity;
 
 public interface Entity {
+    String getName();
+
     void attack(Entity target);
 
     void defend();
