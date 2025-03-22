@@ -1,9 +1,10 @@
 package org.project.entity.enemies;
 
+import org.project.entity.Entity;
 import org.project.object.weapons.Weapon;
 
 // TODO: UPDATE IMPLEMENTATION
-public abstract class Enemy {
+public abstract class Enemy implements Entity {
     Weapon weapon;
     private int hp;
     private int mp;

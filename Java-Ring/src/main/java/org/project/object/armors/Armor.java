@@ -1,7 +1,11 @@
 package org.project.object.armors;
 
+import org.project.object.Object;
+
+import java.io.Serializable;
+
 // TODO: UPDATE IMPLEMENTATION
-public abstract class Armor {
+public abstract class Armor implements Object {
     private int defense;
     private int maxDefense;
     private int durability;
