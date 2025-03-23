@@ -10,13 +10,12 @@ public class Sword extends Weapon{
     THIS IS AN EXAMPLE OF A WEAPON DESIGN.
     */
 
-    int abilityCharge;
-
     public Sword(int damage, int manaCost) {
         super(damage, manaCost);
     }
 
     public void use(Entity target) {
+        checkBroke();
         if(!isBroke()) {
             target.takeDamage(getDamage());
             setDamage(getDamage() - 1);
@@ -29,6 +28,7 @@ public class Sword extends Weapon{
     }
     // TODO: (BONUS) UPDATE THE UNIQUE ABILITY
     public void uniqueAbility(ArrayList<Entity> targets , Entity player) {
+        checkBroke();
         if(!isBroke() && getDamage() > targets.size() / 2 && player.getMp() >= targets.size() * 5) {
             for (Entity target : targets) {
                 target.takeDamage(getDamage());

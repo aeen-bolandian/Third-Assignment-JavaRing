@@ -5,24 +5,15 @@ import org.project.object.weapons.Weapon;
 
 // TODO: UPDATE IMPLEMENTATION
 public class Skeleton extends Enemy{
-    public Skeleton(int hp, int mp, Weapon weapon) {
-        super(hp, mp, weapon);
-    }
-
-    @Override
-    public String getName() {
-        return "";
+    public Skeleton(String name, int hp, int mp, Weapon weapon) {
+        super(name, hp, mp, weapon);
     }
 
     @Override
     public void attack(Entity target) {
-
+        weapon.use(target);
     }
 
-    @Override
-    public void defend() {
-
-    }
 
     @Override
     public void heal(int health) {
