@@ -13,9 +13,9 @@ public interface Entity {
 
     void takeDamage(int damage);
 
-    int getMaxHP();
+    int getMaxHp();
 
-    int getMaxMP();
+    int getMaxMp();
 
     boolean isDead();
 

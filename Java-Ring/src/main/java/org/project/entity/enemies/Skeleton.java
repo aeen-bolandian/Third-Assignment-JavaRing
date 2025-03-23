@@ -10,6 +10,11 @@ public class Skeleton extends Enemy{
     }
 
     @Override
+    public String getName() {
+        return "";
+    }
+
+    @Override
     public void attack(Entity target) {
 
     }
@@ -30,13 +35,28 @@ public class Skeleton extends Enemy{
     }
 
     @Override
-    public int getMaxHP() {
+    public int getMaxHp() {
         return 0;
     }
 
     @Override
-    public int getMaxMP() {
+    public int getMaxMp() {
         return 0;
+    }
+
+    @Override
+    public boolean isDead() {
+        return false;
+    }
+
+    @Override
+    public void setMp(int mp) {
+
+    }
+
+    @Override
+    public void setHp(int hp) {
+
     }
     // TODO: DESIGN ENEMY'S WEAPON AND ARMOR AND IMPLEMENT THE CONSTRUCTOR
 }

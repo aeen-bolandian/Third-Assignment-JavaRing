@@ -69,7 +69,7 @@ public abstract class Player implements Entity {
     public void setHp(int hp) {this.hp = hp;}
 
     @Override
-    public int getMaxHP() {
+    public int getMaxHp() {
         return maxHP;
     }
 
@@ -80,7 +80,7 @@ public abstract class Player implements Entity {
     public void setMp(int mp) {this.mp = mp;}
 
     @Override
-    public int getMaxMP() {
+    public int getMaxMp() {
         return maxMP;
     }
 

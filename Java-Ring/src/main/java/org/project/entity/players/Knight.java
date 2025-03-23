@@ -30,9 +30,9 @@ public class Knight extends Player {
     public void setDefense(int defense) { this.defense = defense; }
 
     public void heal(int health) {
-        if(getMp() > (getMaxHP() - getHp())) {
-            setHp(getMaxHP());
-            fillMana(-(getMaxHP() - getHp()));
+        if(getMp() > (getMaxHp() - getHp())) {
+            setHp(getMaxHp());
+            fillMana(-(getMaxHp() - getHp()));
         }
     }
     // TODO: DESIGN KNIGHT'S WEAPON AND ARMOR AND IMPLEMENT THE CONSTRUCTOR
