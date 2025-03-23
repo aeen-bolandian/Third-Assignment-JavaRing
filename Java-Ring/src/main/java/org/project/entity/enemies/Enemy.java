@@ -51,8 +51,13 @@ public abstract class Enemy implements Entity {
 
     @Override
     public boolean isDead() { return isDead; }
+    public void setDead(boolean isDead) { this.isDead = isDead; }
 
     public String getName() { return name; }
 
+    @Override
+    public void heal() {}
 
+    @Override
+    public void fillMana(int mana){}
 }

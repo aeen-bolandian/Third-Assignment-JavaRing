@@ -5,8 +5,12 @@ import org.project.object.weapons.Weapon;
 
 // TODO: UPDATE IMPLEMENTATION
 public class Skeleton extends Enemy{
+
+    private boolean firstDie;
+
     public Skeleton(String name, int hp, int mp, Weapon weapon) {
         super(name, hp, mp, weapon);
+        firstDie = false;
     }
 
     @Override
@@ -14,39 +18,16 @@ public class Skeleton extends Enemy{
         weapon.use(target);
     }
 
-
-    @Override
-    public void heal() {
+    public void revive() {
+        if(isDead() && !firstDie) {
+            setDead(false);
+            System.out.println("skeleton revived");
+            setDeathTimes(true);
+        }
     }
 
-    @Override
-    public void fillMana(int mana) {
+    public boolean getDeathTimes() { return firstDie; }
+    public void setDeathTimes(boolean firstDie) { this.firstDie = firstDie; }
 
-    }
-
-    @Override
-    public int getMaxHp() {
-        return 0;
-    }
-
-    @Override
-    public int getMaxMp() {
-        return 0;
-    }
-
-    @Override
-    public boolean isDead() {
-        return false;
-    }
-
-    @Override
-    public void setMp(int mp) {
-
-    }
-
-    @Override
-    public void setHp(int hp) {
-
-    }
     // TODO: DESIGN ENEMY'S WEAPON AND ARMOR AND IMPLEMENT THE CONSTRUCTOR
 }
