@@ -42,11 +42,7 @@ public abstract class Player implements Entity {
     }
 
     @Override
-    public void heal(int health) {
-        hp += health;
-        if (hp > maxHP) {
-            hp = maxHP;
-        }
+    public void heal() {
     }
 
     @Override

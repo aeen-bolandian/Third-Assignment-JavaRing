@@ -11,7 +11,7 @@ public class Knight extends Player {
     private int defense;
     public Knight(String name, int hp, int mp, Weapon weapon, Armor armor) {
         super(name, hp, mp, weapon, armor);
-        defense = 5;
+        defense = 10;
     }
 
     public void attack(Entity target) {
@@ -29,7 +29,8 @@ public class Knight extends Player {
     public int getDefense() { return defense; }
     public void setDefense(int defense) { this.defense = defense; }
 
-    public void heal(int health) {
+    @Override
+    public void heal() {
         if(getMp() > (getMaxHp() - getHp())) {
             setHp(getMaxHp());
             fillMana(-(getMaxHp() - getHp()));

@@ -7,7 +7,7 @@ public interface Entity {
 
     void defend();
 
-    void heal(int health);
+    void heal();
 
     void fillMana(int mana);
 

@@ -30,6 +30,7 @@ public class Wizard extends Player{
         fillMana(-50);
     }
 
+    @Override
     public void heal(){
         if(healTimes > 0){
             healTimes--;

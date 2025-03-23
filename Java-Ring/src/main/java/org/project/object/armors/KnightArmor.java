@@ -18,6 +18,7 @@ public class KnightArmor extends Armor {
         return repairCost;
     }
 
+    // use method will increase defense power of Knight
     @Override
     public void use(Entity user) {
         Knight knight = (Knight) user;
