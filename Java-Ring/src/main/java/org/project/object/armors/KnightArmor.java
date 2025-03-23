@@ -1,6 +1,7 @@
 package org.project.object.armors;
 
 import org.project.entity.Entity;
+import org.project.entity.players.Knight;
 
 // TODO: UPDATE IMPLEMENTATION
 public class KnightArmor extends Armor {
@@ -18,9 +19,10 @@ public class KnightArmor extends Armor {
     }
 
     @Override
-    public void use(Entity target) {
-        if(damageReduction > 0) {
-            setDefense(getDefense() + damageReduction);
+    public void use(Entity user) {
+        Knight knight = (Knight) user;
+        if(!isBroke()) {
+            knight.setDefense(knight.getDefense() + damageReduction);
             damageReduction -= 1;
         }
         else
