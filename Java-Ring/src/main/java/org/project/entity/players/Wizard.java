@@ -10,11 +10,13 @@ import java.util.ArrayList;
 // can heal himself for three times without manaCost and heal with -10 mana after that
 public class Wizard extends Player{
 
+    private int defense;
     private int healTimes;
 
     public Wizard(String name, int hp, int mp, Weapon weapon, Armor armor) {
         super(name, hp, mp, weapon, armor);
         healTimes = 3;
+        defense = 5;
     }
 
     public void attack(Entity target) {
@@ -28,6 +30,10 @@ public class Wizard extends Player{
             target.takeDamage(20);
         }
         fillMana(-50);
+    }
+
+    public void takeDamage(int damage) {
+        setHp(getHp() - damage + defense);
     }
 
     @Override
@@ -46,5 +52,8 @@ public class Wizard extends Player{
 
     public int getHealTimes() { return healTimes; }
     public void setHealTimes(int times) { healTimes = times; }
+
+    public int getDefense() { return defense; }
+    public void setDefense(int defense) { this.defense = defense; }
 
 }
