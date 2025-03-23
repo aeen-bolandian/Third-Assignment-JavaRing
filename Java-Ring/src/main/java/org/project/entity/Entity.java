@@ -26,6 +26,7 @@ public interface Entity {
     void setMp(int mp);
 
     void setHp(int hp);
+
     /*
     TODO: ADD OTHER REQUIRED AND BONUS METHODS
     */

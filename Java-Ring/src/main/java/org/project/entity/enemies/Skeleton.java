@@ -13,11 +13,6 @@ public class Skeleton extends Enemy{
         firstDie = false;
     }
 
-    @Override
-    public void attack(Entity target) {
-        weapon.use(target);
-    }
-
     public void revive() {
         if(isDead() && !firstDie) {
             setDead(false);

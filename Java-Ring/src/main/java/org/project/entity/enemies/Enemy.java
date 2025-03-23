@@ -25,6 +25,7 @@ public abstract class Enemy implements Entity {
     }
 
     // TODO: (BONUS) UPDATE THE FORMULA OF TAKING DAMAGE
+    public void attack(Entity target) {}
     @Override
     public void takeDamage(int damage) {
         hp -= damage;

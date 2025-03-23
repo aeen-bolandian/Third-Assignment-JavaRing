@@ -13,11 +13,6 @@ public class Goblin extends Enemy{
         stolenMana = 0;
     }
 
-    @Override
-    public void attack(Entity target) {
-        weapon.use(target);
-    }
-
     public void stealMana(Entity target) {
         stolenMana += 1;
         target.fillMana(-1);
