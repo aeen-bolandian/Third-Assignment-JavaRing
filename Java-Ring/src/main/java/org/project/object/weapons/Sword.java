@@ -1,6 +1,7 @@
 package org.project.object.weapons;
 
 import org.project.entity.Entity;
+import org.project.entity.players.Assassin;
 
 import java.util.ArrayList;
 
@@ -36,6 +37,10 @@ public class Sword extends Weapon{
             }
             setDamage(getDamage() - (targets.size()) / 2);
             System.out.println(player.getName() + " is launching a super attack!");
+            // if assassin attacks with unique ability invisibility will be stopped
+            if(player instanceof Assassin assassin) {
+                assassin.setInvisible(false);
+            }
             return;
         }
         else if(isBroke()) {
