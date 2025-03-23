@@ -2,8 +2,8 @@ package org.project.object.weapons;
 
 import org.project.entity.Entity;
 
-public class SkeletonKnife extends Weapon{
-    public SkeletonKnife(int damage, int manaCost) {
+public class Knife extends Weapon{
+    public Knife(int damage, int manaCost) {
         super(damage, manaCost);
     }
 
