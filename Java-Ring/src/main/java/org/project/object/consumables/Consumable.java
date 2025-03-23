@@ -1,5 +1,6 @@
 package org.project.object.consumables;
 
+import org.project.entity.Entity;
 import org.project.object.Object;
 
 import java.io.Serializable;
@@ -17,6 +18,9 @@ public abstract class Consumable implements Object {
         this.usageTime = usageTime;
         this.manaCost = manaCost;
     }
+
+    @Override
+    public void use(Entity target) {}
 
     public int getUsageTime() { return usageTime; }
     public int getManaCost() { return manaCost; }
