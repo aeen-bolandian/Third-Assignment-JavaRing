@@ -5,7 +5,7 @@ public interface Entity {
 
     void attack(Entity target);
 
-    void defend();
+    void defend(Entity target);
 
     void heal();
 

@@ -9,21 +9,20 @@ import java.io.Serializable;
 public abstract class Armor implements Object {
     private int defense;
     private final int maxDefense;
-    private int durability;
-    private final int maxDurability;
-
+    private final int repairCost;
     private boolean isBroke;
+    private boolean isActive;
 
-    public Armor(int defense, int durability) {
-        this.defense = defense;
-        this.durability = durability;
-        this.maxDefense = defense;
-        this.maxDurability = durability;
+    public Armor(int maxDefense, int repairCost) {
+        this.defense = maxDefense;
+        this.maxDefense = maxDefense;
+        this.repairCost = repairCost;
         this.isBroke = false;
+        this.isActive = false;
     }
 
     public void checkBreak() {
-        if (durability <= 0) {
+        if (defense <= 0) {
             isBroke = true;
             defense = 0;
         }
@@ -34,7 +33,6 @@ public abstract class Armor implements Object {
     public void repair() {
         isBroke = false;
         defense = maxDefense;
-        durability = maxDurability;
     }
 
     public int getDefense() {
@@ -42,15 +40,13 @@ public abstract class Armor implements Object {
     }
     public void setDefense(int defense) {this.defense = defense;}
 
-    public int getDurability() {
-        return durability;
-    }
-    public void setDurability(int durability) {this.durability = durability;}
-
     public boolean isBroke() {
         return isBroke;
     }
     public void setBroke(boolean broke) {
         isBroke = broke;
     }
+
+    public boolean isActive() { return isActive; }
+    public void setActive(boolean active) { this.isActive = active; }
 }

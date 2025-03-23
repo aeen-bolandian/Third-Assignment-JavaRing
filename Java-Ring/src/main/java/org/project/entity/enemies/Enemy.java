@@ -47,7 +47,7 @@ public abstract class Enemy implements Entity {
     }
 
     @Override
-    public void defend(){}
+    public void defend(Entity target){}
 
     @Override
     public boolean isDead() { return isDead; }

@@ -17,7 +17,6 @@ public class Skeleton extends Enemy{
 
     @Override
     public void heal() {
-
     }
 
     @Override

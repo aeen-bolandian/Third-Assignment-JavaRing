@@ -6,28 +6,25 @@ import org.project.entity.players.Knight;
 // TODO: UPDATE IMPLEMENTATION
 public class KnightArmor extends Armor {
 
-    private final int repairCost;
-    private int damageReduction;
-    public KnightArmor(int defense, int durability) {
-        super(defense, durability);
-        repairCost = 10;
-        damageReduction = 5;
-    }
-
-    public int getRepairCost() {
-        return repairCost;
+    public KnightArmor(int maxDefence, int repairCost) {
+        super(maxDefence, repairCost);
     }
 
     // use method will increase defense power of Knight
     @Override
     public void use(Entity user) {
         Knight knight = (Knight) user;
-        if(!isBroke()) {
-            knight.setDefense(knight.getDefense() + damageReduction);
-            damageReduction -= 1;
+        if(!isBroke() && isActive()) {
+            knight.setDefense(knight.getDefense() + getDefense());
+            setDefense(getDefense() - 1);
         }
-        else
+        else if(isBroke()) {
             setBroke(true);
+            System.out.println("Knight Armor has been broken");
+        }
+        else if(!isActive()) {
+            System.out.println("Knight Armor is not active");
+        }
     }
     // TODO: DESIGN ARMOR'S ATTRIBUTES IMPLEMENT THE CONSTRUCTOR
 }

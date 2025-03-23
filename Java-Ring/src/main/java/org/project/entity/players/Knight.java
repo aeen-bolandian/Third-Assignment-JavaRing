@@ -18,10 +18,6 @@ public class Knight extends Player {
         weapon.use(target);
     }
 
-    public void defend(Entity target) {
-        armor.use(target);
-    }
-
     public void takeDamage(int damage) {
         setHp(getHp() - damage + defense);
     }
