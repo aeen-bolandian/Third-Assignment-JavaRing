@@ -24,5 +24,13 @@ public class Skeleton extends Enemy{
     public boolean getDeathTimes() { return firstDie; }
     public void setDeathTimes(boolean firstDie) { this.firstDie = firstDie; }
 
+    @Override
+    public int getDefense() {
+        return 0;
+    }
+
+    @Override
+    public void setDefense(int defense) {}
+
     // TODO: DESIGN ENEMY'S WEAPON AND ARMOR AND IMPLEMENT THE CONSTRUCTOR
 }

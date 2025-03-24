@@ -11,7 +11,7 @@ public class MagicShield extends Armor {
     @Override
     public void use(Entity target) {
         if(target instanceof Wizard wizard) {
-            if(!isBroke() && isActive()) {
+            if(!isBroke()) {
                 wizard.setDefense(wizard.getDefense() + getDefense());
                 setDefense(getDefense() - 1);
             }
@@ -19,9 +19,7 @@ public class MagicShield extends Armor {
                 setBroke(true);
                 System.out.println("Magic Shield has been broken");
             }
-            else if(!isActive()) {
-                System.out.println("Magic Shield is not active");
-            }
+
         }
     }
 }

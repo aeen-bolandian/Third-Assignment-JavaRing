@@ -25,7 +25,7 @@ public abstract class Enemy implements Entity {
     }
 
     // TODO: (BONUS) UPDATE THE FORMULA OF TAKING DAMAGE
-    public void attack(Entity target) {}
+    public void attack(Entity target) { weapon.use(target);}
     @Override
     public void takeDamage(int damage) {
         hp -= damage;
@@ -61,4 +61,7 @@ public abstract class Enemy implements Entity {
 
     @Override
     public void fillMana(int mana){}
+
+    public int getDefense(){ return 0;}
+    public void setDefense(int defense){}
 }

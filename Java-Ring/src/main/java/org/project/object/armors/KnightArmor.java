@@ -13,17 +13,13 @@ public class KnightArmor extends Armor {
     // use method will increase defense power of Knight
     @Override
     public void use(Entity user) {
-        Knight knight = (Knight) user;
-        if(!isBroke() && isActive()) {
-            knight.setDefense(knight.getDefense() + getDefense());
+        if(!isBroke()) {
+            user.setDefense(user.getDefense() + getDefense());
             setDefense(getDefense() - 1);
         }
         else if(isBroke()) {
             setBroke(true);
             System.out.println("Knight Armor has been broken");
-        }
-        else if(!isActive()) {
-            System.out.println("Knight Armor is not active");
         }
     }
     // TODO: DESIGN ARMOR'S ATTRIBUTES IMPLEMENT THE CONSTRUCTOR

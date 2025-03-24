@@ -13,7 +13,6 @@ public class Dragon extends Enemy{
     public void attack(Entity target) {
         if(target instanceof Player player)
         {
-            player.getArmor().setActive(false);
             weapon.use(player);
         }
     }

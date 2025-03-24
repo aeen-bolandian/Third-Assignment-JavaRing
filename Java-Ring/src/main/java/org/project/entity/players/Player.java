@@ -32,7 +32,6 @@ public abstract class Player implements Entity {
 
     @Override
     public void defend(Entity target) {
-        armor.setActive(true);
         armor.use(target);
         // TODO: (BONUS) IMPLEMENT A DEFENSE METHOD FOR SHIELDS
     }

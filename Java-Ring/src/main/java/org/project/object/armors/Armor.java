@@ -11,14 +11,12 @@ public abstract class Armor implements Object {
     private final int maxDefense;
     private final int repairCost;
     private boolean isBroke;
-    private boolean isActive;
 
     public Armor(int maxDefense, int repairCost) {
         this.defense = maxDefense;
         this.maxDefense = maxDefense;
         this.repairCost = repairCost;
         this.isBroke = false;
-        this.isActive = false;
     }
 
     public void checkBreak() {
@@ -47,6 +45,5 @@ public abstract class Armor implements Object {
         isBroke = broke;
     }
 
-    public boolean isActive() { return isActive; }
-    public void setActive(boolean active) { this.isActive = active; }
+    public int getRepairCost() { return repairCost; }
 }

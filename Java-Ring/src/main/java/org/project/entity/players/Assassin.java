@@ -45,6 +45,9 @@ public class Assassin extends Player {
         if(getMp() > (getMaxHp() - getHp())) {
             setHp(getMaxHp());
             fillMana(-(getMaxHp() - getHp()));
+            System.out.println(getName() + "is healing");
         }
+        else
+            System.out.println("not enough mana to heal");
     }
 }

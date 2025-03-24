@@ -27,6 +27,9 @@ public interface Entity {
 
     void setHp(int hp);
 
+    int getDefense();
+
+    void setDefense(int defense);
     /*
     TODO: ADD OTHER REQUIRED AND BONUS METHODS
     */

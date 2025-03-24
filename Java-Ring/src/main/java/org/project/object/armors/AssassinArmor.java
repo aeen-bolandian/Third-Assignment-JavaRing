@@ -11,7 +11,7 @@ public class AssassinArmor extends Armor {
     @Override
     public void use(Entity target) {
         if (target instanceof Assassin assassin) {
-            if(!isBroke() && isActive()) {
+            if(!isBroke()) {
                 assassin.setDefense(assassin.getDefense() + getDefense());
                 setDefense(getDefense() - 1);
             }
@@ -20,8 +20,5 @@ public class AssassinArmor extends Armor {
             setBroke(true);
             System.out.println("Assassin Armor has been broken");
         }
-        else if(!isActive()) {
-            System.out.println("Assassin Armor is not active");
         }
     }
-}

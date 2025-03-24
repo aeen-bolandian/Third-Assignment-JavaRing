@@ -1,6 +1,7 @@
 package org.project.object.weapons;
 
 import org.project.entity.Entity;
+import org.project.entity.enemies.Enemy;
 import org.project.entity.players.Assassin;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ public class Sword extends Weapon{
         }
     }
     // TODO: (BONUS) UPDATE THE UNIQUE ABILITY
-    public void uniqueAbility(ArrayList<Entity> targets , Entity player) {
+    public void uniqueAbility(ArrayList<Enemy> targets , Entity player) {
         checkBroke();
         if(!isBroke() && getDamage() > targets.size() / 2 && player.getMp() >= targets.size() * 5) {
             for (Entity target : targets) {

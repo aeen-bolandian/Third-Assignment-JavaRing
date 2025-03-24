@@ -27,10 +27,6 @@ public class Knight extends Player {
 
     @Override
     public void heal() {
-        if(getMp() > (getMaxHp() - getHp())) {
-            setHp(getMaxHp());
-            fillMana(-(getMaxHp() - getHp()));
-        }
     }
     // TODO: DESIGN KNIGHT'S WEAPON AND ARMOR AND IMPLEMENT THE CONSTRUCTOR
 }

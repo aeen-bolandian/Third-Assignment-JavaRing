@@ -1,6 +1,7 @@
 package org.project.entity.players;
 
 import org.project.entity.Entity;
+import org.project.entity.enemies.Enemy;
 import org.project.object.armors.Armor;
 import org.project.object.weapons.Weapon;
 
@@ -25,8 +26,8 @@ public class Wizard extends Player{
     }
 
     // use magic attack when enemy number is too much
-    public void magicAttack(ArrayList<Entity> targets) {
-        for (Entity target : targets) {
+    public void magicAttack(ArrayList<Enemy> targets) {
+        for (Enemy target : targets) {
             target.takeDamage(20);
         }
         fillMana(-50);
