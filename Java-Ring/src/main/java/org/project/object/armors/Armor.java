@@ -1,42 +1,49 @@
 package org.project.object.armors;
 
-// TODO: UPDATE IMPLEMENTATION
-public abstract class Armor {
-    private int defense;
-    private int maxDefense;
-    private int durability;
-    private int maxDurability;
+import org.project.entity.Entity;
+import org.project.object.Object;
 
+import java.io.Serializable;
+
+// TODO: UPDATE IMPLEMENTATION
+public abstract class Armor implements Object {
+    private int defense;
+    private final int maxDefense;
+    private final int repairCost;
     private boolean isBroke;
 
-    public Armor(int defense, int durability) {
-        this.defense = defense;
-        this.durability = durability;
+    public Armor(int maxDefense, int repairCost) {
+        this.defense = maxDefense;
+        this.maxDefense = maxDefense;
+        this.repairCost = repairCost;
+        this.isBroke = false;
     }
 
     public void checkBreak() {
-        if (durability <= 0) {
+        if (defense <= 0) {
             isBroke = true;
             defense = 0;
         }
     }
 
     // TODO: (BONUS) UPDATE THE REPAIR METHOD
+    // check the repair condition (mana) on main method
     public void repair() {
         isBroke = false;
         defense = maxDefense;
-        durability = maxDurability;
     }
 
     public int getDefense() {
         return defense;
     }
-
-    public int getDurability() {
-        return durability;
-    }
+    public void setDefense(int defense) {this.defense = defense;}
 
     public boolean isBroke() {
         return isBroke;
     }
+    public void setBroke(boolean broke) {
+        isBroke = broke;
+    }
+
+    public int getRepairCost() { return repairCost; }
 }

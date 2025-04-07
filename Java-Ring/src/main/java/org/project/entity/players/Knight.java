@@ -1,6 +1,32 @@
 package org.project.entity.players;
 
+import org.project.entity.Entity;
+import org.project.object.armors.Armor;
+import org.project.object.armors.KnightArmor;
+import org.project.object.weapons.Weapon;
+
 // TODO: UPDATE IMPLEMENTATION
-public class Knight {
+public class Knight extends Player {
+
+    private int defense;
+    public Knight(String name, int hp, int mp, Weapon weapon, Armor armor) {
+        super(name, hp, mp, weapon, armor);
+        defense = 10;
+    }
+
+    public void attack(Entity target) {
+        weapon.use(target);
+    }
+
+    public void takeDamage(int damage) {
+        setHp(getHp() - damage + defense);
+    }
+
+    public int getDefense() { return defense; }
+    public void setDefense(int defense) { this.defense = defense; }
+
+    @Override
+    public void heal() {
+    }
     // TODO: DESIGN KNIGHT'S WEAPON AND ARMOR AND IMPLEMENT THE CONSTRUCTOR
 }

@@ -5,19 +5,21 @@ import org.project.object.armors.Armor;
 import org.project.object.weapons.Weapon;
 
 // TODO: UPDATE IMPLEMENTATION
-public abstract class Player {
+public abstract class Player implements Entity {
     protected String name;
     Weapon weapon;
     Armor armor;
     private int hp;
-    private int maxHP;
+    private final int maxHP;
     private int mp;
-    private int maxMP;
+    private final int maxMP;
 
     public Player(String name, int hp, int mp, Weapon weapon, Armor armor) {
         this.name = name;
         this.hp = hp;
         this.mp = mp;
+        this.maxHP = hp;
+        this.maxMP = mp;
 
         this.weapon = weapon;
         this.armor = armor;
@@ -29,7 +31,8 @@ public abstract class Player {
     }
 
     @Override
-    public void defend() {
+    public void defend(Entity target) {
+        armor.use(target);
         // TODO: (BONUS) IMPLEMENT A DEFENSE METHOD FOR SHIELDS
     }
 
@@ -40,11 +43,7 @@ public abstract class Player {
     }
 
     @Override
-    public void heal(int health) {
-        hp += health;
-        if (hp > maxHP) {
-            hp = maxHP;
-        }
+    public void heal() {
     }
 
     @Override
@@ -60,21 +59,25 @@ public abstract class Player {
         return name;
     }
 
+    @Override
     public int getHp() {
         return hp;
     }
+    public void setHp(int hp) {this.hp = hp;}
 
     @Override
-    public int getMaxHP() {
+    public int getMaxHp() {
         return maxHP;
     }
 
+    @Override
     public int getMp() {
         return mp;
     }
+    public void setMp(int mp) {this.mp = mp;}
 
     @Override
-    public int getMaxMP() {
+    public int getMaxMp() {
         return maxMP;
     }
 
@@ -86,4 +89,8 @@ public abstract class Player {
         return armor;
     }
 
+    @Override
+    public boolean isDead(){
+        return hp <= 0;
+    }
 }
